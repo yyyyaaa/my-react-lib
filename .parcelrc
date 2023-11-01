@@ -1,0 +1,21 @@
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.{svg,png}": [
+      "@parcel/transformer-raw"
+    ],
+    "*.css.ts": [
+      "@vanilla-extract/parcel-transformer"
+    ],
+    "*.{ts,tsx}": [
+      "@parcel/transformer-typescript-tsc",
+      "@parcel/transformer-react-refresh-wrap"
+    ]
+  },
+  "optimizers": {
+    "*.js": [
+      "./parcel-transformer-strip-css-import.js",
+      "..."
+    ]
+  }
+}

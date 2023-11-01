@@ -1,0 +1,59 @@
+{
+  "name": "my-react-lib",
+  "source": "src/index.ts",
+  "main": "dist/my-react-lib.cjs.js",
+  "module": "dist/my-react-lib.esm.js",
+  "types": "dist/my-react-lib.d.ts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/my-react-lib.d.ts",
+        "default": "./dist/my-react-lib.d.ts"
+      },
+      "module": "./dist/my-react-lib.esm.js",
+      "import": "./dist/my-react-lib.cjs.js",
+      "default": "./dist/my-react-lib.cjs.js"
+    },
+    "./styles": "./dist/my-react-lib.cjs.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "dev": "parcel watch",
+    "build": "parcel build"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "@parcel/resolver-default": {
+    "packageExports": true
+  },
+  "peerDependencies": {
+    "react": "^18.x",
+    "react-dom": "^18.x"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.10.1",
+    "@parcel/transformer-typescript-tsc": "^2.10.1",
+    "@parcel/transformer-typescript-types": "^2.10.1",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
+    "@vanilla-extract/parcel-transformer": "^1.0.0",
+    "parcel": "^2.10.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.13.0"
+  }
+}
